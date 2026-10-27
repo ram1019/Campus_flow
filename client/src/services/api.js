@@ -1,6 +1,8 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
-  : '/api';
+  : import.meta.env.PROD
+    ? 'https://campus-flow-dc4x.onrender.com/api'
+    : '/api';
 
 /**
  * Universal fetch wrapper for CampusFlow API
